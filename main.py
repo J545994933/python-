@@ -75,10 +75,10 @@ isinstance()会认为子类是一种父类类型  返回 True 和 False
  s.update( {"字符串"} ) 将字符串添加到集合中，有重复的会忽略。
  s.update( "字符串" ) 将字符串拆分单个字符后，然后再一个个添加到集合中，有重复的会忽略。
 """
-list1 = [1, 2, 3]
-list2 = [4, 2, 3]
-set1 = set(list1)
-print(set1[0])
+# list1 = [1, 2, 3]
+# list2 = [4, 2, 3]
+# set1 = set(list1)
+# print(set1[0])
 # print(list(set(list2) - set(list1)))  # 只有集合可以做集合运算 | - & ^
 # todo 算数运算符
 # a = 20
@@ -305,4 +305,113 @@ mode: 模式
 # with open('./test.txt', 'r+') as f:
 #     read_data = f.readlines()
 # print(read_data)
-# todo os
+# todo class
+"""
+类的专有方法：
+__init__ : 构造函数，在生成对象时调用
+__del__ : 析构函数，释放对象时使用
+__repr__ : 打印，转换
+__setitem__ : 按照索引赋值
+__getitem__: 按照索引获取值
+__len__: 获得长度
+__cmp__: 比较运算
+__call__: 函数调用
+__add__: 加运算
+__sub__: 减运算
+__mul__: 乘运算
+__truediv__: 除运算
+__mod__: 求余运算
+__pow__: 乘方
+静态方法: 用 @staticmethod 装饰的不带 self 参数的方法叫做静态方法，类的静态方法可以没有参数，可以直接使用类名调用。
+普通方法: 默认有个self参数，且只能被对象调用。
+类方法: 默认有个 cls 参数，可以被类和对象调用，需要加上 @classmethod 装饰器。
+"""
+
+# 类定义
+# class people:
+#     # 定义基本属性
+#     # name = ''
+#     # age = 0
+#     # # 定义私有属性,私有属性在类外部无法直接进行访问
+#     # __weight = 0
+#
+#     # 定义构造方法
+#     def __init__(self, n, a, w):
+#         self.name = n
+#         self.age = a
+#         self.__weight = w
+#
+#     def speak(self):
+#         print("%s 说: 我 %d 岁。" % (self.name, self.age))
+#
+# # 单继承示例
+# class student(people):
+#     # grade = ''
+#
+#     def __init__(self, n, a, w, g):
+#         # 调用父类的构函
+#         people.__init__(self, n, a, w)
+#         self.grade = g
+#
+#     # 覆写父类的方法
+#     def speak(self):
+#         print("%s 说: 我 %d 岁了，我在读 %d 年级" % (self.name, self.age, self.grade))
+#
+#
+# s = student('ken', 10, 60, 3)
+# s.speak()
+# todo 队列
+
+# from queue import Queue
+# import threading
+# import time
+# q = Queue()
+#
+#
+# def product(name):
+#     count = 1
+#     while True:
+#         dict1 = {'1': 1, '2': 2}
+#         print(q.qsize())
+#         q.put(dict1)
+#         print(q.qsize())
+#         print('{}训练气球兵{}只'.format(name, count))
+#         count += 1
+#         time.sleep(5)
+#
+#
+# def consume(name):
+#     while True:
+#         data = q.get()
+#         print(data,type(data))
+#         print('{}使用了{}'.format(name, data))
+#         time.sleep(1)
+#         q.task_done()
+#
+#
+# t1 = threading.Thread(target=product, args=('wpp',))
+# t2 = threading.Thread(target=consume, args=('ypp',))
+# t3 = threading.Thread(target=consume, args=('others',))
+#
+# t1.start()
+# t2.start()
+# t3.start()
+# todo 局部变量与作用域
+# def outer():
+#     num = 10
+#     def inner():
+#         nonlocal num   # nonlocal关键字声明
+#         num = 100
+#         print(num)
+#     inner()
+#     print(num)
+# outer()
+#
+# num = 1
+# def fun1():
+#     global num  # 需要使用 global 关键字声明
+#     print(num)
+#     num = 123
+#     print(num)
+# fun1()
+# print(num)
