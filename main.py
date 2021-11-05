@@ -415,3 +415,58 @@ __pow__: 乘方
 #     print(num)
 # fun1()
 # print(num)
+# todo 文本切割算法
+# import re
+# introduce = """那今天的福利呢就是珂拉琪口红珂拉琪。所有女生人手一支两支八支十支都不为过的贼好用的唇釉猫猫店六十九米一支，线下门店四十九一支，
+# 其他直播再便宜也要三十九点九米一支，今天在呦呦的直播间六十九米不要，四十九米不要，三十九点九米也不要了。
+# 所有想要珂拉琪的姐妹，左上角关注点起来，然后把唇釉，两个字抠在公屏上，所有点了关注，抠了唇釉的姐妹，今天直接二十八点八米带走了。"""
+# # sentences = re.split('[，。;]', introduce)
+# # print(sentences)
+# # for sentence in sentences:
+# #     if len(sentence) > 50:
+# #         print(False)
+# #     else:
+# #         print(sentence)
+#
+# def str_split(sentences):
+#     index = 0
+#     while index != len(sentences):
+#         print(index)
+#         if len(sentences[index]) > 60:
+#             print(sentences[index])
+#             sentences_list = sentence_split(sentences[index])
+#             for i in range(len(sentences_list)):
+#                 sentences.insert(index + i, sentences_list[i])
+#             index += len(sentences_list)
+#             sentences.remove(sentences[index])
+#         else:
+#             index += 1
+#
+# def sentence_split(introduce):
+#     sentences = re.split('[，。;]', introduce)
+#     sentence_list = []
+#     initial_str = sentences[0]
+#     for sentence_index in range(1, len(sentences)):
+#         # print(sentence_index, len(sentences))
+#         if len((initial_str + sentences[sentence_index])) > 60 or sentence_index == len(sentences) - 1:
+#             sentence_list.append(initial_str)
+#             initial_str = sentences[sentence_index]
+#             if sentence_index == len(sentences) - 1:
+#                 sentence_list.append(initial_str)
+#         else:
+#             initial_str = initial_str + ',' + sentences[sentence_index]
+#     return sentence_list
+#
+# sentences = introduce.split('。')
+# str_split(sentences)
+# print(sentences)
+# todo re正则表达式
+# import re
+# pattern = ''
+# context = ''
+# re.match(pattern, context)
+test = '123,456,789'
+print(test.split(',')[0])
+list_test = [1]
+for i in range(len(list_test)):
+    print(i)
