@@ -460,13 +460,19 @@ __pow__: 乘方
 # sentences = introduce.split('。')
 # str_split(sentences)
 # print(sentences)
+# todo docker
+"""
+docker ps -a 查看已经在运行的容器
+docker images 查看镜像
+docker exec -it 
+"""
 # todo re正则表达式
 # import re
 # pattern = ''
 # context = ''
 # re.match(pattern, context)
-test = '123,456,789'
-print(test.split(',')[0])
-list_test = [1]
-for i in range(len(list_test)):
-    print(i)
+# test = '123,456,789'
+# print(test.split(',')[0])
+# list_test = [1]
+# for i in range(len(list_test)):
+#     print(i)
