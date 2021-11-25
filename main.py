@@ -9,7 +9,7 @@
 # int1 = 123456
 # print(str1[-1])
 # print(str1.find('235'))
-# # print(int1[:])
+# print(int1[:])
 # todo  列表 字典
 # list1 = []
 # dict1 = {}
@@ -70,7 +70,7 @@ isinstance()会认为子类是一种父类类型  返回 True 和 False
 # print(type(A) == A)  # type
 # print(type(B) == A)  # type
 # print(issubclass(B, A))  # 仅可用于对比类
-# todo 集合
+# todo 集合 可变类似
 """
  s.update( {"字符串"} ) 将字符串添加到集合中，有重复的会忽略。
  s.update( "字符串" ) 将字符串拆分单个字符后，然后再一个个添加到集合中，有重复的会忽略。
@@ -175,7 +175,7 @@ isinstance()会认为子类是一种父类类型  返回 True 和 False
 # print(list1)
 # print(list2)
 # print(list3)
-# todo 元组 tuple  可用的为 count len() index  内容不可改变,可用 + 连接两个元组  元素可重复
+# todo 元组 tuple 不可变类型 可用的为 count len() index  内容不可改变,可用 + 连接两个元组  元素可重复
 # tup1 = ('Google', 'Runoob', 1997, 2000)
 # tup2 = (1, 2, 3, 4, 5)
 # tup3 = "a", "b", "c", "d"   # 不需要括号也可以
@@ -466,6 +466,13 @@ docker ps -a 查看已经在运行的容器
 docker images 查看镜像
 docker exec -it 
 """
+# todo git
+"""
+git config --global http.sslVerrify "false" 连接失败或者超时时可以执行该命令
+git config --global user.name "jiangyujie" 名字
+git config --global user.email "545994933@qq.com" 邮箱
+ssh-keygen 生成公钥   
+"""
 # todo re正则表达式
 # import re
 # pattern = ''
@@ -476,3 +483,12 @@ docker exec -it
 # list_test = [1]
 # for i in range(len(list_test)):
 #     print(i)
+A = [1, 2, 3, 4, 4]
+B = [1, 1, 2, 5]
+
+for a in A.copy():
+    if a in B:
+        A.remove(a)
+        B.remove(a)
+
+print(A+B)
